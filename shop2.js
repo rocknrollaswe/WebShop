@@ -33,15 +33,13 @@ async function fetchData() {
             console.log("Something went wrong:" + error)
         })
         .finally(() => {
-            app.randomFavSamples = getRandomSamplesFromFavorites(app.favorites); 
+            //app.randomFavSamples = getRandomSamplesFromFavorites(app.favorites); 
             app.loading = false;
         })
 
 }
 
-
-
-
+/* 
 function getRandomSamplesFromFavorites(array){
     var randomIndex;
     var randomFirstObj;
@@ -71,7 +69,7 @@ function getRandomSamplesFromFavorites(array){
     }
     console.log(randomizedArray);
     return randomizedArray; 
-}
+} */
 
 function getGUID() {
     var u = '', i = 0;
