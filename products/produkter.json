@@ -1,0 +1,92 @@
+[
+  {
+    "ID": "adce2355-614f-4925-acf2-9836e78cc3ad",
+    "Category": "SWEATER",
+    "Title": "Black sweater",
+    "Price": 299.90,
+    "Description": "En tr\u00F6ja i bomullsblandad sweatshirtkvalitet. Tr\u00F6jan har rund halsringning och l\u00E4tt nedhasad axel. Ribbad mudd kring hals, vid \u00E4rmslut och i nederkant. Mjuk, borstad insida.",
+    "Img": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F8e%2Fb6%2F8eb6c0c8b85a450c5eeeb772b1803255cf357748.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D\u0026call=url[file:/product/main]",
+    "ShowFirst": false,
+    "InStock": 4
+  },
+  {
+    "ID": "15b1ad9b-33aa-4e1d-bf57-0416beeec7ab",
+    "Category": "SWEATER",
+    "Title": "Pink sweater",
+    "Price": 399.90,
+    "Description": "En l\u00E5ng\u00E4rmad tr\u00F6ja i mjuk sweatshirtkvalitet.Tr\u00F6jan har dubblerad huva med dragsko och omlottlagd framkant.K\u00E4nguruficka fram.Ribbad mudd vid \u00E4rmslut och i nederkant.",
+    "Img": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2Ff7%2F10%2Ff71081600068697294b9d0a588c2dc3d1ead4a9f.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D\u0026call=url[file:/product/main]",
+    "ShowFirst": true,
+    "InStock": 10
+  },
+  {
+    "ID": "aff99e12-8f7d-4f87-bcd8-53f2d3ed5a41",
+    "Category": "SWEATER",
+    "Title": "Brown Sweater",
+    "Price": 299.90,
+    "Description": "Blank Staples \u00E4r en streetwear-kollektion av minimalistiska plagg som \u00E4r en perfekt canvas f\u00F6r din personliga stil och kreativitet. Denna tidl\u00F6sa tr\u00F6ja \u00E4r tillverkad i kraftig, 460 gsm sweatshirtkvalitet av ekologisk bomull som ger en h\u00F6g premiumk\u00E4nsla. Tr\u00F6jan \u00E4r rakt skuren och oversized f\u00F6r en avslappnad passform. Rund, ribbad halsringning. L\u00E5ng \u00E4rm med kraftigt nedhasad axel. Ribbad mudd vid \u00E4rmslut och i nederkant.",
+    "Img": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F2e%2Fcd%2F2ecd151d66a10704be5e1984e745e23bc2eb4d0a.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D\u0026call=url[file:/product/main]",
+    "ShowFirst": true,
+    "InStock": 8
+  },
+  {
+    "ID": "a8ee2db6-6149-4748-ac2d-7e108fd6d8d1",
+    "Category": "UNDERWEAR",
+    "Title": "Trunks 3-pack",
+    "Price": 149.50,
+    "Description": "Fina kalsonger med motiv i 3-pack",
+    "Img": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F78%2F17%2F7817ce11a5dff6136fb05770ae0b083e586cc405.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D\u0026call=url[file:/product/main]",
+    "ShowFirst": true,
+    "InStock": 15
+  },
+  {
+    "ID": "acb1d8b3-1dc2-474d-a447-e4d491ad58a9",
+    "Category": "UNDERWEAR",
+    "Title": "5-pack trosor",
+    "Price": 149.50,
+    "Description": "Trosor i trik\u00E5 och spets. Trosorna \u00E4r halvt\u00E4ckande bak. Normalh\u00F6g midja. Fodrad gren.",
+    "Img": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F28%2Fc6%2F28c6eb1f4a410be06be3e2bcea852ba6a82613de.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D\u0026call=url[file:/product/main]",
+    "ShowFirst": true,
+    "InStock": 15
+  },
+  {
+    "ID": "c7e5e2b6-ff69-44c8-90a0-1dc942cc1202",
+    "Category": "UNDERWEAR",
+    "Title": "Cool bra",
+    "Price": 259.90,
+    "Description": "En bygel-bh i spets. Bh:n har meshfodrade kupor som ger l\u00E4tt st\u00F6d och en naturlig form \u00E5t bysten. Reglerbara axelband. Kn\u00E4ppning bak med hyskor och hakar.",
+    "Img": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F67%2F3f%2F673f2dfe26763fd4d09504c3426ced0f0811a75d.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5Bladies_lingerie_bras%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B1%5D\u0026call=url[file:/product/main]",
+    "ShowFirst": true,
+    "InStock": 10
+  },
+  {
+    "ID": "47752b5e-c393-4160-845e-211e413501e2",
+    "Category": "PANTS",
+    "Title": "Joggers Slim Fit",
+    "Price": 299.90,
+    "Description": "Ett par dressade joggers i v\u00E4vd kvalitet med pressveck. De har kl\u00E4dd res\u00E5r och dragsko i midjan. Sidfickor samt en stolpficka bak. Slim Fit \u2013 en passform som \u00E4r smal \u00F6ver l\u00E5r, kn\u00E4 och ankel. Detta skapar en figursydd silhuett.",
+    "Img": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2Fd4%2F60%2Fd4600576336768dcf64f7e6201a5690db119aa84.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D\u0026call=url[file:/product/main]",
+    "ShowFirst": true,
+    "InStock": 25
+  },
+  {
+    "ID": "8fe8ee8d-9f34-4197-8f48-4443f7726b24",
+    "Category": "PANTS",
+    "Title": "Chinos Slim Fit",
+    "Price": 299.99,
+    "Description": "Ett par chinos i extra stretchig twill av bomull. De har sidfickor, en myntficka och stolpfickor bak med knapp. Gylf med dragkedja. Slim Fit \u2013 en passform som \u00E4r smal \u00F6ver l\u00E5r, kn\u00E4 och ankel. Detta skapar en figursydd silhuett.",
+    "Img": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F4d%2F24%2F4d246faa55763fd10d1ebc11bb33219eaa3e57ba.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5Bmen_trousers_chinos_slim_all%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B1%5D\u0026call=url[file:/product/main]",
+    "ShowFirst": false,
+    "InStock": 35
+  },
+  {
+    "ID": "6cb336cc-2801-4b25-8391-fbcd68eb2b8d",
+    "Category": "PANTS",
+    "Title": "Regular Denim Joggers",
+    "Price": 599.99,
+    "Description": "Ett par joggers i stretchig bomullsdenim. De har normalh\u00F6g midja med kl\u00E4dd res\u00E5r och dragsko. Sidfickor och en \u00F6ppen bakficka. Raka ben med god r\u00F6relsevidd \u00F6ver l\u00E5r och kn\u00E4 samt kl\u00E4dd res\u00E5r vid benslut. Fuskgylf.",
+    "Img": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F4c%2Fba%2F4cba6e700b5d8e0934b352d521971197ad88d354.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D\u0026call=url[file:/product/main]",
+    "ShowFirst": false,
+    "InStock": 5
+  }
+]

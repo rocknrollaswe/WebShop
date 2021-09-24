@@ -1,0 +1,583 @@
+@font-face{
+    font-family: darkTwenty;  
+    src: url(fonts/Dark\ Twenty.otf)
+}
+@font-face{
+    font-family: omniFace;  
+    src: url(fonts/Omniface\ Demo\ Version.otf)
+}
+@font-face{
+    font-family: Roadway;
+    src: url(fonts/ROADWAY_.ttf)
+}
+@font-face{
+    font-family: Times;
+    src: url(fonts/Times\ New\ Normal\ Regular.ttf)
+}
+
+*{
+    margin:0; 
+    padding:0; 
+    box-sizing: border-box; 
+}
+body{
+    display: flex; 
+    flex-direction: column;
+    min-height: 100vh; 
+    background-color: white;
+}
+
+header{
+    background-color: rgb(253, 108, 10);
+    height: 250px; 
+    font-family: omniFace;
+    align-items: center;
+    text-align: center;
+    padding: 30px; 
+}
+
+header .logo{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color: black;    
+    font-size: 40px;
+    margin:0; 
+    /*border: 1px dashed black;*/ 
+     
+}
+header .logo h2{
+    font-size: 20px; 
+    margin:0; 
+}
+
+nav{
+    background-color: rgb(22, 19, 19);
+}
+
+.navList{
+    margin-left:auto; 
+    margin-right:auto; 
+    background-color: rgb(247, 187, 170);
+    /*background: linear-gradient(rgb(213, 211, 210), rgb(248, 239, 242),rgb(214, 82, 45) );*/
+    min-height: 60px;
+    max-height: auto; 
+    border-style: solid dotted solid dashed;
+    border-color:   rgb(22, 19, 19);; 
+    border-width: 2px 7px 2px 5px;
+    width: 90%;
+}
+main{
+    
+    background-image: url(images/beautiful-mountains-wallpaper-2048x1152.jpg);
+    background-repeat:repeat; 
+    background-position: top;
+    background-size:auto;
+}
+main img{
+    width: 1000px; 
+}
+
+footer{
+    background-color: rgb(145, 77, 22);
+    height: 100px; 
+    text-align: center;
+    display:flex; 
+    justify-content: flex-end;
+    align-items: center;
+
+}
+#adminButton{
+    max-height: 40px;
+    font-size: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 20px;
+    background-color: cadetblue; 
+
+}
+
+
+#bigLogo{
+    flex: 1 1 100%;
+    margin-top: 30px; 
+    max-width: 450px;
+    min-width: 250px;  
+    height: auto; 
+    
+}
+
+
+nav ul{
+
+    display: flex;
+    flex-flow: row wrap; 
+    align-items: center;
+    justify-content: space-around; 
+    color: rgb(31, 33, 34); 
+    font-family: Roadway; 
+    font-size: 40px;
+    cursor: pointer;
+    list-style: none;  
+    
+}
+
+nav ul li:first-child{
+   color: rgb(19, 17, 17);
+   font-weight: bold;
+}
+nav ul li:last-child{
+    color: rgb(19, 17, 17);
+    font-weight: bold;
+ }
+
+nav ul li {
+    
+    width: 10rem;
+    margin: 10px; 
+}
+
+nav ul li:hover {
+    color:rgb(121, 67, 9);
+
+    transition: 200ms ease;
+    
+}
+
+.animatedButton{
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(226, 226, 226); 
+    transition: 200ms ease-in-out;
+    padding: 10px;
+    font-family: Times;
+    font-size: 25px;
+    
+}
+.animatedButton:hover{    
+    
+    box-shadow: 0px 1px 10px rgb(17, 66, 56);
+}
+
+
+/* MAIN CONTAINERS */
+.container{
+    width: 100%; 
+    min-height: 80vh;
+    max-height:auto; 
+    padding-top: 30px; 
+    
+}
+.startPage{
+   
+    background-color: rgba(42, 39, 24, 0.564);
+    
+}
+.prodPage{
+    
+    background-color: rgba(145, 118, 7, 0.183);
+}
+
+.adminPage{
+    
+    background-color: rgba(145, 118, 7, 0.183);
+}
+
+.cartPage{
+    
+    background-color: rgba(255, 255, 253, 0.279);
+}
+
+.allItems{
+    display:flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.card:hover{
+    background-color: rgb(134, 230, 223);
+}
+.card:hover img{
+    box-shadow:none; 
+    border: 1px solid rgb(75, 74, 74); 
+    box-shadow: 0px 15px 125px rgb(17, 66, 56);
+}
+.card{
+margin:30px 10px;
+transition: 500ms linear;
+display: flex;
+flex-flow: column wrap;
+
+justify-content: center;
+align-items: center;
+background-color: whitesmoke /* rgba(133, 44, 44, 0.701) */;
+padding:10px;
+border-radius: 30px;
+width: 250px; 
+max-height: 70vh;
+}
+
+.card h2{
+    font-family: Times; 
+    margin-top: 10px; 
+}
+.card p{
+    font-size: 15px; 
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.card img{   
+    
+    width:200px;
+    height:auto;  
+    box-shadow:none; 
+    border: none; 
+    
+    border-radius: 120px;
+    transition: 500ms ease-in; 
+}    
+
+.card .checkboxLabelContainer{
+    display:flex;
+    justify-content:right; 
+    
+    border-style: none none dashed solid;
+    border-width: 6px;
+    border-color:rgba(15, 11, 11, 0.285);
+    border-radius: 10px;
+    width: 250px;
+    padding:20px;
+    margin:0;
+   
+}
+.checkboxLabelContainer p{
+    font-size: 20px;
+}
+
+.modalProductContainer{
+    background-color: rgba(20, 18, 14, 0.768);
+    background-size:cover;
+    position:absolute; 
+    top: 40%; 
+    left: 50%; 
+    transform: translate(-50%, -14.7%); 
+    bottom: 200px;
+    width: 100%;
+    height: 130%; 
+    margin-top:60px; 
+  
+}
+
+.modal{
+    background-color:rgb(134, 230, 223); 
+    min-height: 600px;
+    max-height: 600px; 
+    padding:0 10px; 
+    margin-left: auto; 
+    margin-right: auto;
+    display: flex;
+    flex-flow:column wrap;
+    overflow:visible;
+    transition: 1000ms ease-in-out;
+}
+.modal >*{
+    /* border: 1px dashed blue;  */
+}
+.modal:hover{
+    min-height: 690px;
+    max-height: 690px; 
+    width: 350px;   
+    position:relative;
+    bottom: 100px;     
+    transition: 2000ms ease-in-out;
+}
+
+.modal:hover img{
+    width: 230px ;
+    transition: 500ms ease-in-out;
+}
+
+
+
+.modal:hover .buyButton{
+   background-color: rgb(17, 99, 89);
+  
+}
+
+.buyButton:active{
+    background-color: rgb(167, 111, 5);
+}
+
+#backButton:active{
+    background-color: tomato;
+}
+
+.model h2{
+    margin:-50px;
+    padding:0; 
+    
+}
+#price{
+    display: static;
+    bottom:20px;
+    transition: 500ms ease-in-out; 
+}
+.modal p{
+    font-size: 10px;
+    margin:0;
+    word-wrap:normal;
+    
+    line-break: auto;
+}
+.modal img{
+    width: 200px; 
+    transition: 500ms ease-in-out; 
+}
+
+.modal #stockInfo{
+    position: relative;
+    bottom: 30px; 
+}
+.modal #backButton{
+    display:none; 
+}
+
+.modal .buyButton{
+    font-size: 25px;
+    position: relative;
+    padding:10px;
+    margin: 0px;
+    top: 0px;
+    background-color: teal;
+}
+
+.modalProductContainer .closeButton{ 
+    
+      
+    background-color: rgb(216, 109, 37);
+    
+}
+
+
+/*ADMIN*/
+.adminModalContainer{
+    display: flex; 
+    justify-content: flex-end;
+    border: 2px dashed black; 
+    width: 50vw;
+    margin-right: auto; 
+    margin-left: auto;  
+}
+.adminModal{
+    padding: 10px; 
+    display: flex; 
+    flex-flow: column;
+    align-items: center; 
+    justify-content: center;
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 300px; 
+    height: 500px; 
+    border: 5px solid slategrey;
+    
+
+}
+.adminModal h2{
+    margin-bottom: 20px; 
+}
+.adminModal input{
+    width: 200px; 
+    margin: 2px; 
+    padding: 5px; 
+}
+
+.addProductModal{
+    background-color: rgba(114, 31, 31, 0.783);
+}
+
+.changeProductModal{
+    background-color: rgba(71, 172, 255, 0.613);
+}
+
+
+
+
+
+/*ADMIN-PRODLIST*/
+
+.adminProduct{
+    background-color: tomato;
+    margin:10px 10px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    padding:10px;
+    border-radius: 10px;
+    width: 300px;
+    min-height: 50vh; 
+    max-height: 70vh;   
+}
+
+.favorites{
+    background-color: teal;
+}
+
+.adminProduct img{
+    width: 80px; 
+}
+
+
+
+
+
+/*CART*/
+.cartInfoHeader{
+    text-align:center; 
+    background-color: whitesmoke;
+    font-family: Times;
+    font-size: 30px;
+    padding: 10px; 
+    height: 50px; 
+    margin-bottom: 20px; 
+    border-radius: 10px;  
+    margin-left:auto;
+    margin-right: auto;  
+    width: 900px; 
+   
+}
+.cartContainer{
+    display: flex; 
+    flex-flow: row wrap;
+    background-color: whitesmoke;
+    padding: 20px;
+    margin-left:auto;
+    margin-right: auto;  
+    width: 900px; 
+    border: 3px solid black; 
+    border-radius: 20px;  
+}
+
+.cartContainer ul{
+     
+    display:flex; 
+    flex-wrap: wrap; 
+    height: auto;
+    align-content: flex-start;
+    
+
+}
+
+.cartContainer ul li{
+    margin: 5px;
+    list-style: none; 
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-flow: column wrap;
+    min-width: 200px;
+    height: 200px; 
+    border: 2px solid rgb(14, 13, 13); 
+    border-radius: 30px;
+    background-color: rgb(233, 233, 233);
+     
+}
+.cartContainer ul li img{
+    width:70px; 
+    
+}
+
+.cartContainer ul li #removeImg{
+    position: relative; 
+    left: 70px;
+    bottom: 2px;  
+    color: rgb(233, 233, 233);
+}
+
+.cartContainer ul li #removeImg:hover{
+    cursor: pointer;
+}
+
+.cartContainer .totalWPaymentButton{
+    display: flex; 
+    justify-content: space-around;
+    align-items: center;
+    margin-top: auto;
+    background-color: white;
+    height: 100px;
+}
+
+/*PAYMENT*/
+.paymentForm{
+    display: flex;
+    align-items: flex-start;
+    flex-flow:row wrap; 
+    background-color: rgb(255, 255, 255);
+    background-color: white;
+    padding: 50px;
+    margin: 0 30px; 
+    
+    height: auto; 
+    border-style: solid;
+    border-color: black; 
+    border-width: 0px 3px 3px 3px; 
+   
+}
+
+.paymentForm fieldset{
+    margin: 10px; 
+    padding: 5px; 
+}
+.paymentForm fieldset >*{
+    margin-bottom: 5px; 
+}
+
+.paymentForm form{
+    
+    margin: 30px;
+    height: auto;  
+    width: 1000px; 
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto auto;
+    
+    background-color: white;
+}
+.paymentForm form button{
+    background-color: green;
+    padding:10px; 
+    border-radius: 20px;
+    font-weight: bold;
+}
+fieldset{
+    border-color:rgb(17, 70, 17); 
+}
+
+@media only screen and (max-width: 370px){
+    header{
+        height: 170px; 
+    }
+
+    .navList{
+        width: 70%;
+    }
+
+    nav ul li{
+        border-width: 0 0 1px;
+        border-style: solid;
+        border-color: rgb(77, 74, 74); 
+    }
+
+    #bigLogo{
+        margin-top: 20px; 
+        MAX-width: 280px; 
+    }
+
+    .modal{
+        min-height: 700px; 
+    }
+    
+    #backButton{
+        display: block; 
+    }
+
+}
+

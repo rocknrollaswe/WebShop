@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online-Webstore</title>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="shop.css">
+</head>
+
+<body>
+    <div id="bigVue">
+        <!--HEADER-->
+        <header>
+            <logotype></logotype>
+        </header>
+
+
+        <!---NAV-->
+        <nav>
+            <div class="navList">
+                
+                <ul>
+                    <li v-on:click="changePage('startPage')">START</li>
+                    <li v-on:click="changePage('sweatersPage')">Sweaters</li>
+                    <li v-on:click="changePage('pantsPage')">Pants</li>
+                    <li v-on:click="changePage('underwearPage')">Underwear</li>
+                    <li v-on:click="changePage('cartPage');">CART</li>
+                    
+                </ul>
+            </div>
+        </nav>
+
+
+        <!--MAIN-->
+        <main v-if="!loading">
+
+            <div class="startPage container" v-if="currentPage === 'startPage'">
+                <div>
+                    <h2 class="cartInfoHeader">Välkommen till The Store!</h2>
+                </div>  
+                <favorites></favorites>
+                <div v-if="showModalProduct === true">
+                    <modal></modal>
+                </div>
+            </div>
+
+            <div class="prodPage container"
+                v-if="currentPage === 'sweatersPage' || currentPage === 'pantsPage' || currentPage === 'underwearPage'">
+                <div v-if="currentPage === 'sweatersPage'">
+                    <sweaters></sweaters>
+                    <div v-if="showModalProduct === true">
+                        <modal></modal>
+                    </div>
+                </div>
+                <div v-if="currentPage === 'pantsPage'">
+                    <pants></pants>
+                    <div v-if="showModalProduct === true">
+                        <modal></modal>
+                    </div>
+                </div>
+                <div v-if="currentPage === 'underwearPage'">
+                    <underwear></underwear>
+                    <div v-if="showModalProduct === true">
+                        <modal></modal>
+                    </div>
+                </div>
+
+            </div>
+            <div class="adminPage container" v-if="currentPage === 'adminPage'">
+                <admin/>
+                
+
+            </div>
+
+            <div class="cartPage container" v-if="currentPage === 'cartPage'">
+                <cart></cart>
+                <div class="paymentPage" v-if="payment">
+                   <payment></payment>
+                    
+                </div>
+            </div>
+            <!--FOOTER-->
+            <footer id="Contacts">
+                <button id="adminButton" v-on:click="changePage('adminPage')">TO ADMIN</button>
+            </footer>
+        
+    </div>
+    </main>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="shop2.js"></script>
+</body>
+
+</html>
