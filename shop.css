@@ -190,7 +190,7 @@ nav ul li:hover {
 
 .allItems{
     display:flex;
-    flex-direction:column;
+    flex-direction:row;
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
@@ -363,7 +363,7 @@ max-height: 70vh;
 .adminModalContainer{
     display: flex; 
     justify-content: flex-end;
-    border: 2px dashed black; 
+   
     width: 50vw;
     margin-right: auto; 
     margin-left: auto;  
@@ -434,6 +434,7 @@ max-height: 70vh;
 
 /*CART*/
 .cartInfoHeader{
+  
     text-align:center; 
     background-color:whitesmoke;
     font-family: Times;

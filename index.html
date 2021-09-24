@@ -25,7 +25,7 @@
                 
                 <ul>
                     <li v-on:click="changePage('startPage')">START</li>
-                    <li v-on:click="changePage('sweatersPage')">Sweaters</li>
+                    <li v-on:click="changePage('sweatersPage');">Sweaters</li>
                     <li v-on:click="changePage('pantsPage')">Pants</li>
                     <li v-on:click="changePage('underwearPage')">Underwear</li>
                     <li v-on:click="changePage('cartPage');">CART</li>
@@ -39,8 +39,10 @@
         <main v-if="!loading">
 
             <div class="startPage container" v-if="currentPage === 'startPage'">
-                <div>
-                    <h2 class="cartInfoHeader">Välkommen till The Store!</h2>
+                <div class="cartInfoHeader">
+                    <h2 >Välkommen till The Store!</h2>
+                    <p>Här nedan listar vi några av våra favoriter för tillfället: </p>
+
                 </div>  
                 <favorites></favorites>
                 <div v-if="showModalProduct === true">

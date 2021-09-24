@@ -1,3 +1,7 @@
+var products = []; 
+
+
+
 
 document.addEventListener(
     "click", 
@@ -14,18 +18,20 @@ document.addEventListener(
 
 window.onload = async function () {
     await fetchData();
-    //app.list = products;
+    app.list = products;
 }
+
+
 
 
 async function fetchData() {
 
-    //await axios.get('/products/produkter.json')
-    await axios.get('WebShop/products/produkter.json')
+    await axios.get('products/produkter.json')
+
         .then(response => {
-            app.list = response.data;
+            products = response.data;
             
-            app.favorites = app.list.filter(item => item.ShowFirst === true);
+            app.favorites = products.filter(item => item.ShowFirst === true);
            
             console.log(app.favorites);
 
@@ -88,7 +94,7 @@ Vue.component('logotype', {
 
     data: function () {
         return {
-           logo: /*'/images/logocut.png'*/ 'WebShop/images.logocut.png'
+           logo: '/images/logocut.png' //'WebShop/images.logocut.png'
         }
     },
 
@@ -126,12 +132,15 @@ Vue.component('favorites', {
                         <div class="card" v-for="item in list" v-bind:key="item.ID"  v-on:click="alertShowModal(item.ID)">
                             <h2>{{item.Title}}</h2>
                             <img :src="item.Img">
-                            <h2>{{item.Price.toFixed(2)}} kr</h2>
+                            <h2>{{item.Price}} kr</h2>
                         </div>
                     </div>
                 </div>`
 
 })
+
+
+
 
 //--------------------------------------------------------------------
 Vue.component('sweaters', {
@@ -156,19 +165,23 @@ Vue.component('sweaters', {
 
     },
 
+    updated(){
+        this.list =  app.list.filter(item => item.Category === 'SWEATER');
+    },
+
     template: `<div>
                     <div class="allItems">
                         <div class="card" v-for="item in list" v-bind:key="item.ID"  v-on:click="alertShowModal(item.ID)">
                             <h2>{{item.Title}}</h2>
                             <img :src="item.Img">
-                            <h2>{{item.Price.toFixed(2)}} kr</h2>
+                            <h2>{{item.Price}} kr</h2>
                         </div>
                     </div>
                 </div>`
 
 })
 //----------------------------------------------------------------------
-Vue.component('pants', {
+var pants = Vue.component('pants', {
 
     data: function () {
         return {
@@ -195,14 +208,14 @@ Vue.component('pants', {
                         <div class="card" v-for="item in list" v-bind:key="item.ID"  v-on:click="alertShowModal(item.ID)">
                             <h2>{{item.Title}}</h2>
                             <img :src="item.Img">
-                            <h2>{{item.Price.toFixed(2)}} kr</h2>
+                            <h2>{{item.Price}} kr</h2>
                         </div>
                     </div>
                 </div>`
 
 })
 //-------------------------------------------------------------------------
-Vue.component('underwear', {
+var underwear = Vue.component('underwear', {
 
     data: function () {
         return {
@@ -230,7 +243,7 @@ Vue.component('underwear', {
                         <div class="card" v-for="item in list" v-bind:key="item.ID"  v-on:click="alertShowModal(item.ID)">
                             <h2>{{item.Title}}</h2>
                             <img :src="item.Img">
-                            <h2>{{item.Price.toFixed(2)}} kr</h2>
+                            <h2>{{item.Price}} kr</h2>
                         </div>
                     </div>
                 </div>`
@@ -446,17 +459,33 @@ var app = new Vue({
             randomFavSamples: [],
             cart: [],
             totalAmount: 0,
-            beforeTax: 0
+            beforeTax: 0,
+
+            inputID2: '',
+            inputTitle2: '',
+            inputPrice2: '',
+            inputDescription2: '',
+            inputImg2: '',
+            inputHowMany2: '',
+            inputShowFirst2: '',
+            inputCategory2: '',
+            categories: {
+                1: { id: 1, val: 'Tröja' },
+                2: { id: 2, val: 'Byxa' },
+                3: { id: 3, val: 'Underkläder' }
+            },
             
+
         }
     },
 
     methods: {
         changePage: function (page) {
-
+            
             this.currentPage = page
             console.log(page)
         },
+
 
 
         AddToCart: function (ID) {
@@ -559,7 +588,7 @@ var app = new Vue({
 
         addProduct: function(product){
             try{
-                 if(product !== null){
+                if(product !== null){
                 this.list.push(product);} 
                 console.log('product pushed');
                 console.log(this.list); 
@@ -568,44 +597,15 @@ var app = new Vue({
                 console.log('Something\' wrong:' + error)
             }
             
-        }, 
-
-        setToFavorite: function(ID){
-            var itemToFavorite = this.list.find(item => item.ID === ID); 
-            itemToFavorite.ShowFirst = true; 
-            this.favorites.push(itemToFavorite); 
-            console.log('Current favorite-amount:');
-            console.log(this.favorites.length);
-        }, 
-
-        removeFavorite: function(ID){
-            var itemToRemove = this.list.find(item => item.ID === ID); 
-            itemToRemove.ShowFirst = false; 
-            var i  =  this.cart.map(item => item.ID).indexOf(ID); 
-            this.favorites.splice(i, 1);
-            console.log('Current favorite-amount:'); 
-            console.log(this.favorites.length);
-        },
-
-        changeProduct: function(product, ID){
-            var itemToChangeSlightly = this.list.find(item => item.ID === ID); 
-            
-            itemToChangeSlightly.Title = product.Title; 
-            itemToChangeSlightly.Price = product.Price; 
-            itemToChangeSlightly.Description = product.Description;
-            itemToChangeSlightly.Img = product.Img; 
-            itemToChangeSlightly.InStock = product.InStock; 
-            itemToChangeSlightly.Category = product.Category; 
-
-            console.log(itemToChangeSlightly.Title); 
         }
+
 
 
 
     },
 
     created() {
-
+       
         console.log('Vue Object created')
         console.log(this.list)
 
@@ -635,13 +635,23 @@ Vue.component('admin', {
                 3: { id: 3, val: 'Underkläder' }
             },
 
+            inputID2: '',
+            inputTitle2: '',
+            inputPrice2: '',
+            inputDescription2: '',
+            inputImg2: '',
+            inputHowMany2: '',
+            inputShowFirst2: '',
+            inputCategory2: '',
+            categories: {
+                1: { id: 1, val: 'SWEATER' },
+                2: { id: 2, val: 'PANTS' },
+                3: { id: 3, val: 'UNDERWEAR' }
+            }, 
            
-            inputTitleChange: '',
-            inputPriceChange: '',
-            inputDescriptionChange: '',
-            inputImgChange: '',
-            inputHowManyChange: '',
-            inputCategoryChange: ''
+
+
+            chosenProductToChange: ''
 
 
         }
@@ -654,40 +664,65 @@ Vue.component('admin', {
 
             console.log("setting new product...")
             var newId = getGUID();
+
             let product = { ID: newId, Category: this.inputCategory, Title: this.inputTitle, Price: this.inputPrice, Description: this.inputDescription, Img: this.inputImg, ShowFirst: false, InStock: this.inputHowMany }
-
-            app.addProduct(product);
+         
+            app.list.push(product);
         },
 
-        alertSetToFavorite: function(ID){
-            app.setToFavorite(ID); 
-            
-        },
-
-        alertRemoveFavorite: function(ID){
-            app.removeFavorite(ID); 
-            
+        SetToFavorite: function(ID){
+            var itemToFavorite = app.list.find(item => item.ID === ID); 
+            itemToFavorite.ShowFirst = true; 
+            app.favorites.push(itemToFavorite);
+            console.log('Current favorite-amount:'); 
+            console.log(app.favorites.length);
         },
         
-        setToChangeProductModal: function(ID){                                      ////NOT WORKING!!!!
-            var itemToChangeIndex =  this.list.map(item => item.ID).indexOf(ID); 
-            
-            var itemToChange;
-            
-            
-            console.log(itemToChange.Description);
-            
-            this.inputTitleChange = itemToChange.Title;
-            this.inputPriceChange = itemToChange.Price; 
-            this.inputDescriptionChange = itemToChange.Description; 
-            this.inputImgChange = itemToChange.Img;
-            this.inputHowManyChange = itemToChange.InStock;
-            this.inputCategoryChange = itemToChange.Category; 
 
-            itemToChange.Title = this.inputTitleChange;
+        RemoveFavorite: function(ID){
+            
+            var itemToRemove = app.list.find(item => item.ID === ID); 
+            itemToRemove.ShowFirst = false; 
+            var i  =  app.list.map(item => item.ID).indexOf(ID); 
+            app.favorites.splice(i, 1);
+            console.log('Current favorite-amount:'); 
+            console.log(app.favorites.length);
+            
+        },
 
-            app.changeProduct(itemToChange, ID); 
-            this.list = app.list; 
+        
+        changeProduct: function(ID){
+            var itemToChange = app.list.find(item => item.ID === ID)
+
+            console.log(itemToChange.ID);
+            console.log(itemToChange.Title); 
+
+            itemToChange.Title = this.inputTitle2; 
+            itemToChange.Price = this.inputPrice2; 
+            itemToChange.Description = this.inputDescription2; 
+            itemToChange.Img = this.inputImg2; 
+            itemToChange.InStock = this.inputHowMany2; 
+            itemToChange.Category = this.inputCategory2; 
+        }, 
+
+        fetchProductToChange: function(ID){
+            console.log(ID); 
+            if(!ID){
+                alert('du måste välja en produkt först!')
+                return; 
+            }
+            var itemToChange = app.list.find(item => item.ID === ID)
+
+            console.log(itemToChange.ID);
+            console.log(itemToChange.Title); 
+
+            this.inputTitle2 = itemToChange.Title;
+            this.inputPrice2 = itemToChange.Price; 
+            this.inputDescription2 = itemToChange.Description; 
+            this.inputImg2 = itemToChange.Img;
+            this.inputHowMany2 = itemToChange.InStock;
+            this.inputCategory2 = itemToChange.Category; 
+
         }
 
     },
@@ -706,23 +741,33 @@ Vue.component('admin', {
                         <br><label for="howMany">Antal ex: </label><input type="number" min="0" max="99" v-model="inputHowMany"> 
                         <br><button style="margin-top: 20px;" v-on:click="setNewProduct()">Lägg till ny produkt!</button>
                     </div>
+
+
+
                     <div class="adminModal changeProductModal" ><h2>Ändra befintlig produkt: </h2>
-                        <input type="text" placeholder="Namn på produkten" v-model="inputTitleChange"/>
-                        <br><input type="number" step="any" min="1" max="5000" placeholder="Pris på produkten" v-model="inputPriceChange"/>
-                        <br><select v-model="inputCategoryChange" selected="Kategori"> 
+                        <label for="choose">Välj produkt: </label><br><select id="choose" v-model="chosenProductToChange">
+                        <option value=''>--Välj produkt--</option>
+                        <option v-for="item in list" v-bind:value="item.ID" >{{item.Title}}</option>
+                        </select>
+                         <button @click="fetchProductToChange(chosenProductToChange)">HämtaProdukt</button>
+                        <input type="text" placeholder="Namn på produkten" v-model="inputTitle2"/>
+                        <br><input type="number" step="any" min="1" max="5000" placeholder="Pris på produkten" v-model="inputPrice2"/>
+                        <br><select v-model="inputCategory2" selected="Kategori"> 
                             <option value="" disabled selected hidden> --- Välj kategori --- </option>
                             <option v-for="item in categories" :value="item.val" :key="item.id">{{item.val}}</option>
                             </select>
-                    <br><textarea  rows="5" cols="27" placeholder="Beskrivning av produkten" v-model="inputDescriptionChange"/>
-                    <br><input type="text" placeholder="BildUrl på produkten" v-model="inputImg"/>
-                    <br><label for="howMany">Antal ex: </label><input type="number" min="0" max="99" v-model="inputHowManyChange"> 
-                    <br><button style="margin-top: 20px;" v-on:click="setToChangeProductModal()">Ändra på produkt!</button>
+                    <br><textarea  rows="5" cols="27" placeholder="Beskrivning av produkten" v-model="inputDescription2"/>
+                    <br><input type="text" placeholder="BildUrl på produkten" v-model="inputImg2"/>
+                    <br><label for="howMany">Antal ex: </label><input type="number" min="0" max="99" v-model="inputHowMany2"> 
+                    <br><button style="margin-top: 20px;" v-on:click="changeProduct(chosenProductToChange)">Ändra på produkt!</button>
                     </div>
+
+
+
                     <div class="allItems">
                         <div class="adminProduct" :class="[item.ShowFirst ? 'favorites' : 'not']" v-for="item in list" v-bind:key="item.ID">
                             <h4>ID: {{item.ID}}</h4><h5>{{item.Category}}</h5><h2>{{item.Title}}</h2><br><h4>{{item.Price}} kr</h4><p>{{item.Description}}</p><img :src="item.Img">
-                            <button v-on:click="alertSetToFavorite(item.ID)" v-if="!item.ShowFirst" id="addFavoriteButton">Sätt som favorit</button><button v-on:click="alertRemoveFavorite(item.ID)" v-if="item.ShowFirst" id="addFavoriteButton">Ta bort som favorit</button> 
-                            <button v-on:click="setToChangeProductModal(item.ID)">Ändra på objekt</button>
+                            <button v-on:click="SetToFavorite(item.ID)" v-if="!item.ShowFirst" id="addFavoriteButton">Sätt som favorit</button><button v-on:click="RemoveFavorite(item.ID)" v-if="item.ShowFirst" id="addFavoriteButton">Ta bort som favorit</button> 
                         </div>
                     </div>     
                     <div class="adminModalContainer">
@@ -745,12 +790,12 @@ Vue.component('admin-prod-list', {
     methods: {
 
         alertSetToFavorite: function(ID){
-            app.setToFavorite(ID); 
+            setToFavorite(ID); 
             
         },
 
         alertRemoveFavorite: function(ID){
-            app.removeFavorite(ID); 
+            removeFavorite(ID); 
             
         }
 
