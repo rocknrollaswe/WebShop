@@ -322,7 +322,7 @@ Vue.component('cart', {
                         <h2 class="cartInfoHeader">Produkter i din varukorg:</h2>
                         <ul>
                             <li v-for="item in cartList">
-                                <img id="removeImg" v-on:click="alertRemoveObj(item.ID)" src="/icons/remove3.png" style="width: 30px;">
+                                <img id="removeImg" v-on:click="alertRemoveObj(item.ID)" src="icons/remove3.png" style="width: 30px;">
                                 <h3>{{item.Title}}</h3>
                                 <h4>{{item.Price.toFixed(2)}} :-</h4>
                                 <img v-bind:src="item.Img"/> 
