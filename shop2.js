@@ -94,7 +94,7 @@ Vue.component('logotype', {
 
     data: function () {
         return {
-           logo: '/images/logocut.png' //'WebShop/images.logocut.png'
+           logo: 'images/logocut.png' //'WebShop/images.logocut.png'
         }
     },
 
